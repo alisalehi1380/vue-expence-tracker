@@ -1,29 +1,26 @@
 <template>
-  <h3>اضافه کردن تراکنش جدید</h3>
-  <form id="form" @submit.prevent="onSubmit">
-    <div class="form-control">
-      <label for="text">عنوان</label>
-      <input type="text" id="text" placeholder="عنوان تراکنش را وارد کنید" v-model="text" />
+  <h3 class="mb-1 text-sm font-medium">ایجاد تراکنش</h3>
+  <form @submit.prevent="onSubmit">
+    <div class="form-control mb-4 space-y-2">
+      <app-input placeholder="عنوان تراکنش را وارد کنید" class="font-light border w-full p-2 focus:outline-none focus:outline-2 focus:border-gray-400 placeholder-text-200" type="text" />
+      <app-input placeholder="مبلغ را وارد کنید" class="font-light border w-full p-2 focus:outline-none focus:outline-8 focus:border-gray-400" type="number" />
+
+<!--      <input type="text" placeholder="عنوان تراکنش را وارد کنید" v-model="text" />-->
+<!--      <input-->
+<!--          class="rounded text-sm"-->
+<!--          type="number"-->
+<!--          placeholder="مبلغ را وارد کنید"-->
+<!--          v-model="amount"-->
+<!--      />-->
     </div>
-    <div class="form-control">
-      <label for="amount"
-        >مبلغ<br />
-      </label
-      >
-      <input
-        type="text"
-        id="amount"
-        placeholder="مبلغ را وارد کنید"
-        v-model="amount"
-      />
-    </div>
-    <button class="btn">اضافه کردن</button>
+    <button class="p-2 w-full h-full rounded bg-slate-100 hover:bg-slate-200">ثبت</button>
   </form>
 </template>
 
 <script setup>
-import { useToast } from 'vue-toastification';
-import { ref } from 'vue';
+import {useToast} from 'vue-toastification';
+import {ref} from 'vue';
+import AppInput from "@/components/global/AppInput.vue";
 
 const text = ref('');
 const amount = ref('');

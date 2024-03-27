@@ -1,14 +1,18 @@
 <template>
-  <Header />
-  <div class="container">
-    <Balance :total="total" />
-    <IncomeExpenses :income="+income" :expenses="+expenses" />
-    <TransactionList
-        :transactions="transactions"
-        @transactionDeleted="handleTransactionDeleted"
-    />
-    <AddTransaction @transactionSubmitted="handleTransactionSubmitted" />
-  </div>
+  <main class="container mx-auto my-auto" style="max-width: 400px; max-height: 600px;">
+    <div class="border p-7 rounded">
+      <Header />
+      <div class="container">
+        <Balance :total="total" />
+        <IncomeExpenses :income="+income" :expenses="+expenses" />
+        <TransactionList
+            :transactions="transactions"
+            @transactionDeleted="handleTransactionDeleted"
+        />
+        <AddTransaction @transactionSubmitted="handleTransactionSubmitted" />
+      </div>
+    </div>
+  </main>
 </template>
 
 <script setup>
@@ -18,9 +22,9 @@ import IncomeExpenses from './components/IncomeExpenses.vue';
 import TransactionList from './components/TransactionList.vue';
 import AddTransaction from './components/AddTransaction.vue';
 
-import { ref, computed, onMounted } from 'vue';
+import {ref, computed, onMounted} from 'vue';
 
-import { useToast } from 'vue-toastification';
+import {useToast} from 'vue-toastification';
 
 const toast = useToast();
 
