@@ -4,19 +4,20 @@
       class="rounded text-sm"
       :type="type"
       :placeholder="placeholder"
+      v-model="localAmount"
+      @input="$emit('update:modelValue', localAmount)"
   />
-  <!--v-model="amount"-->
 </template>
 
 <script setup lang="ts">
-import {defineProps, withDefaults} from 'vue';
+import {defineProps, ref} from 'vue';
+
+const localAmount = ref('');
 
 interface Props {
-  type?: "text" | "number";
+  type: "text" | "number";
   placeholder: string;
 }
 
-withDefaults(defineProps<Props>(), {
-  type: "text"
-});
+defineProps<Props>();
 </script>
