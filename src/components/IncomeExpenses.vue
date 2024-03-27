@@ -4,12 +4,12 @@
   <div class="flex shadow mb-4 justify-evenly py-4 text-center">
     <div>
       <h4 class="mb-1 text-sm">درآمد</h4>
-      <TomanIcon :amount="income" customClass="text-green-600" />
+      <toman-icon :amount="income" customClass="text-green-600" />
     </div>
     <div class="h-max-2 bg-gray-200 w-[1px]"></div>
     <div>
       <h4 class="mb-1 text-sm">مخارج</h4>
-      <TomanIcon :amount="expenses" customClass="text-red-600" />
+      <toman-icon :amount="expenses" customClass="text-red-600" />
     </div>
   </div>
 </template>

@@ -10,7 +10,7 @@
     <div class="text-sm font-normal">{{ title }}</div>
 
     <div class="flex align-middle content-end">
-      <TomanIcon :amount="amount" />
+      <toman-icon :amount="amount" />
       <div
           v-show="showDeleteIcon"
           class="cursor-pointer text-xl font-normal mr-2"

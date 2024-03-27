@@ -1,7 +1,6 @@
 <template>
   <main class="container mx-auto my-auto" style="max-width: 400px; max-height: 600px;">
     <div class="border p-7 rounded">
-      <Header />
       <div class="container">
         <Balance :total="total" />
         <IncomeExpenses :income="+income" :expenses="+expenses" />
@@ -16,7 +15,6 @@
 </template>
 
 <script setup>
-import Header from './components/Header.vue';
 import Balance from './components/Balance.vue';
 import IncomeExpenses from './components/IncomeExpenses.vue';
 import TransactionList from './components/TransactionList.vue';
