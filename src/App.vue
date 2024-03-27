@@ -2,13 +2,13 @@
   <main class="container mx-auto my-auto" style="max-width: 400px; max-height: 600px;">
     <div class="border p-7 rounded">
       <div class="container">
-        <Balance :total="total" />
-        <IncomeExpenses :income="+income" :expenses="+expenses" />
-        <TransactionList
+        <balance :total="total" />
+        <income-expenses :income="+income" :expenses="+expenses" />
+        <transaction-list
             :transactions="transactions"
             @transactionDeleted="handleTransactionDeleted"
         />
-        <AddTransaction @transactionSubmitted="handleTransactionSubmitted" />
+        <add-transaction @transactionSubmitted="handleTransactionSubmitted" />
       </div>
     </div>
   </main>
