@@ -72,9 +72,8 @@ const handleTransactionSubmitted = (transactionData) => {
   toast.success('Transaction added.');
 };
 
-// Generate unique ID
 const generateUniqueId = () => {
-  return Math.floor(Math.random() * 1000000);
+  return Date.now();
 };
 
 // Delete transaction
