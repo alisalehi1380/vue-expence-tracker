@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "pinia": "^2.1.7",
     "tailwindcss": "^3.4.1",
     "vazirmatn": "^33.0.3",
     "vee-validate": "^4.12.6",
