@@ -35,8 +35,6 @@ interface IProps {
 }
 
 const props = defineProps<IProps>();
-
 const useExpense = useExpenseStore();
-console.log(useExpense.expenseList)
 const deleteItem = async () => await useExpense.deleteExpense(props.item.id)
 </script>
