@@ -2,8 +2,10 @@
   <main class="container mx-auto my-auto" style="max-width: 400px; max-height: 600px;">
     <div class="border p-7 rounded">
       <div class="container">
+        <h2 class="text-center mb-4 font-semibold text-xl">حسابگر هزینه</h2>
+        <hr class="border-b border-b-gray-50 mb-4" />
         <balance :total="total" />
-        <income-expenses :income="+income" :expenses="+expenses" />
+        <income-expenses />
         <h3 class="mb-1 text-sm font-medium">لیست تراکنش ها</h3>
         <suspense>
           <template #default>
@@ -46,21 +48,6 @@ const total = computed(() => {
   }, 0);
 });
 
-// Get income
-const income = computed(() => {
-  return transactions.value
-      .filter((transaction) => transaction.amount > 0)
-      .reduce((acc, transaction) => acc + transaction.amount, 0)
-      .toFixed(2);
-});
-
-// Get expenses
-const expenses = computed(() => {
-  return transactions.value
-      .filter((transaction) => transaction.amount < 0)
-      .reduce((acc, transaction) => acc + transaction.amount, 0)
-      .toFixed(2);
-});
 
 // Submit transaction
 const handleTransactionSubmitted = (transactionData) => {
@@ -78,17 +65,6 @@ const handleTransactionSubmitted = (transactionData) => {
 const generateUniqueId = () => {
   return Date.now();
 };
-
-// Delete transaction
-// const handleTransactionDeleted = (id) => {
-//   transactions.value = transactions.value.filter(
-//       (transaction) => transaction.id !== id
-//   );
-//
-//   saveTransactionsToLocalStorage();
-//
-//   toast.success('Transaction deleted.');
-// };
 
 // Save transactions to local storage
 const saveTransactionsToLocalStorage = () => {
