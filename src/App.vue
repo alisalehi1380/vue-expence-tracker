@@ -5,9 +5,9 @@
         <balance :total="total" />
         <income-expenses :income="+income" :expenses="+expenses" />
         <transaction-list
-            :transactions="transactions"
             @transactionDeleted="handleTransactionDeleted"
         />
+        <!--            :transactions="transactions"-->
         <add-transaction @transactionSubmitted="handleTransactionSubmitted" />
       </div>
     </div>
@@ -19,13 +19,10 @@ import Balance from './components/Balance.vue';
 import IncomeExpenses from './components/IncomeExpenses.vue';
 import TransactionList from './components/TransactionList.vue';
 import AddTransaction from './components/AddTransaction.vue';
-
 import {ref, computed, onMounted} from 'vue';
-
 import {useToast} from 'vue-toastification';
 
 const toast = useToast();
-
 const transactions = ref([]);
 
 onMounted(() => {
