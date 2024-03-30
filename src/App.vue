@@ -4,8 +4,14 @@
       <div class="container">
         <balance :total="total" />
         <income-expenses :income="+income" :expenses="+expenses" />
+        <h3 class="mb-1 text-sm font-medium">لیست تراکنش ها</h3>
         <suspense>
-          <transaction-list />
+          <template #default>
+            <transaction-list />
+          </template>
+          <template #fallback>
+              <expense-loading/>
+          </template>
         </suspense>
         <add-transaction @transactionSubmitted="handleTransactionSubmitted" />
       </div>
@@ -20,6 +26,7 @@ import TransactionList from './components/TransactionList.vue';
 import AddTransaction from './components/AddTransaction.vue';
 import {ref, computed, onMounted} from 'vue';
 import {useToast} from 'vue-toastification';
+import ExpenseLoading from "@/components/global/ExpenseLoading.vue";
 
 const toast = useToast();
 const transactions = ref([]);
