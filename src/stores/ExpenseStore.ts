@@ -1,7 +1,7 @@
 import {ref} from "vue";
 import {defineStore} from "pinia";
 import {useToast} from 'vue-toastification';
-import {useApi} from "../composables/useApi";
+import {useApi} from "@/composables/UseApi";
 
 export const useExpenseStore = defineStore('expense', () => {
     const toast = useToast();
@@ -30,5 +30,30 @@ export const useExpenseStore = defineStore('expense', () => {
         }
     }
 
-    return {expenseList, expenseItem, fetchExpenses, createExpense, deleteExpense};
+    const totalIncome = (): number => {
+        let total = 0;
+        expenseList.value.forEach(item => {
+            if (item.amount > 0) {
+                total += item.amount
+            }
+        });
+        return total;
+    }
+
+    const totalExpense = (): number => {
+        let total = 0;
+        expenseList.value.forEach(item => {
+            if (item.amount < 0) {
+                total += item.amount
+            }
+        });
+
+        return total;
+    }
+
+    const balance = (): number => {
+        return totalIncome() + totalExpense();
+    }
+
+    return {expenseList, expenseItem, fetchExpenses, createExpense, deleteExpense, totalIncome,totalExpense,balance};
 });
