@@ -4,10 +4,9 @@
       <div class="container">
         <balance :total="total" />
         <income-expenses :income="+income" :expenses="+expenses" />
-        <transaction-list
-            @transactionDeleted="handleTransactionDeleted"
-        />
-        <!--            :transactions="transactions"-->
+        <suspense>
+          <transaction-list />
+        </suspense>
         <add-transaction @transactionSubmitted="handleTransactionSubmitted" />
       </div>
     </div>
@@ -74,15 +73,15 @@ const generateUniqueId = () => {
 };
 
 // Delete transaction
-const handleTransactionDeleted = (id) => {
-  transactions.value = transactions.value.filter(
-      (transaction) => transaction.id !== id
-  );
-
-  saveTransactionsToLocalStorage();
-
-  toast.success('Transaction deleted.');
-};
+// const handleTransactionDeleted = (id) => {
+//   transactions.value = transactions.value.filter(
+//       (transaction) => transaction.id !== id
+//   );
+//
+//   saveTransactionsToLocalStorage();
+//
+//   toast.success('Transaction deleted.');
+// };
 
 // Save transactions to local storage
 const saveTransactionsToLocalStorage = () => {
