@@ -49,7 +49,6 @@ const onSubmit = () => {
 
   emit('transactionSubmitted', transactionData);
 
-  // Clear form fields
   text.value = '';
   amount.value = '';
 };
