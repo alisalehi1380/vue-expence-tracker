@@ -5,13 +5,13 @@ import {useApi} from "@/composables/UseApi";
 
 export const useExpenseStore = defineStore('expense', () => {
     const toast = useToast();
-    const expenseList = ref([] as ITransaction[]);
-    const expenseItem = ref({} as ITransaction);
+    const expenseList = ref([] as IExpenseItem[]);
+    const expenseItem = ref({} as IExpenseItem);
 
     // @ts-ignore
     const fetchExpenses = async () => {
         const {data, error} = await useApi("/todo");
-        if (data.value) expenseList.value = data.value as ITransaction[];
+        if (data.value) expenseList.value = data.value as IExpenseItem[];
     };
 
     const createExpense = (expense) => {
