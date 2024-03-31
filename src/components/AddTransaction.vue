@@ -1,21 +1,43 @@
 <template>
-  <h3 class="mb-1 text-sm font-medium">ایجاد تراکنش</h3>
+  <h3 class="mb-1 text-sm font-medium dark:text-stone-300">ایجاد تراکنش</h3>
   <form @submit.prevent="onSubmit">
     <div class="form-control mb-4 space-y-2">
       <app-input
           placeholder="عنوان تراکنش را وارد کنید"
-          class="font-light border w-full p-2 focus:outline-none focus:outline-2 focus:border-gray-400 placeholder-text-200"
+          class="font-light border w-full p-2
+          focus:outline-none
+          focus:outline-2
+          focus:border-gray-400
+          placeholder-text-200
+          dark:border-slate-800
+          dark:text-stone-300
+          dark:bg-gray-700"
           type="text"
           @update:modelValue="handleTitleUpdate"
       />
       <app-input
           placeholder="مبلغ را وارد کنید"
-          class="sample_farsi_digits font-light border w-full p-2 focus:outline-none focus:outline-8 focus:border-gray-400"
+          class="sample_farsi_digits font-light border w-full p-2
+          focus:outline-none
+          focus:outline-8
+          focus:border-gray-400
+          dark:border-slate-800
+          dark:text-stone-300
+          dark:bg-gray-700"
           type="number"
           @update:modelValue="handleAmountUpdate"
       />
     </div>
-    <button class="p-2 w-full h-full rounded bg-slate-100 hover:bg-slate-200">ثبت</button>
+    <button
+        class="p-2 w-full h-full rounded
+        bg-slate-100
+        hover:bg-slate-200
+        dark:text-stone-300
+        dark:bg-slate-500
+        dark:hover:bg-slate-600"
+    >
+      ثبت
+    </button>
   </form>
 </template>
 

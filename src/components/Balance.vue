@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center items-center mb-4">
-    <h4 class="pl-1 text-sm font-medium">تراز شما:</h4>
+    <h4 class="pl-1 text-sm font-medium dark:text-stone-300">تراز شما:</h4>
     <toman-icon :amount="balance" :customClass="balance > 0 ? 'text-green-600' : 'text-red-600'" />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <ul class="mb-4 space-y-2">
     <template v-for="transaction in expenseStore.expenseList">
-      <ListItem :item="transaction" />
+      <list-item :item="transaction" />
     </template>
   </ul>
 </template>
