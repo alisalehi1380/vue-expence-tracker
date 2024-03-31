@@ -19,7 +19,7 @@ export const useExpenseStore = defineStore('expense', () => {
     };
 
     // @ts-ignore
-    const deleteExpense = async (id: number) => {
+    const deleteExpense = async (id: number):Promise => {
         const {data, error} = await useApi(`/todo/${id}`).delete();
         if (data.value) {
             const foundIndex = expenseList.value.findIndex((x) => x.id === id);

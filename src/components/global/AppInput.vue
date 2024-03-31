@@ -1,18 +1,20 @@
 <template>
   <input
       style="font-size: 0.75rem"
-      class="rounded text-sm"
+      class="font-light border w-full p-2 rounded text-sm
+          dark:border-slate-800
+          dark:text-stone-300
+          dark:bg-gray-700
+          focus:outline-none
+          focus:border-gray-400
+          sample_farsi_digits"
       :type="type"
       :placeholder="placeholder"
-      v-model="localAmount"
-      @input="$emit('update:modelValue', localAmount)"
   />
 </template>
 
 <script setup lang="ts">
-import {defineProps, ref} from 'vue';
-
-const localAmount = ref('');
+import {defineProps} from 'vue';
 
 interface Props {
   type: "text" | "number";

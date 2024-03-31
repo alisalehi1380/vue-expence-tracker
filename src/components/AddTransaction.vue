@@ -4,28 +4,11 @@
     <div class="form-control mb-4 space-y-2">
       <app-input
           placeholder="عنوان تراکنش را وارد کنید"
-          class="font-light border w-full p-2
-          focus:outline-none
-          focus:outline-2
-          focus:border-gray-400
-          placeholder-text-200
-          dark:border-slate-800
-          dark:text-stone-300
-          dark:bg-gray-700"
           type="text"
-          @update:modelValue="handleTitleUpdate"
       />
       <app-input
           placeholder="مبلغ را وارد کنید"
-          class="sample_farsi_digits font-light border w-full p-2
-          focus:outline-none
-          focus:outline-8
-          focus:border-gray-400
-          dark:border-slate-800
-          dark:text-stone-300
-          dark:bg-gray-700"
           type="number"
-          @update:modelValue="handleAmountUpdate"
       />
     </div>
     <button
