@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import {defineProps, computed} from 'vue';
+import {computed} from 'vue';
 
 interface IProps {
   variant: 'primary' | 'icon'
@@ -19,7 +19,7 @@ const handleVariantClasses = computed(() => {
     case 'icon':
       return 'p-2 bg-slate-100 rounded mb-2 dark:text-stone-300 dark:bg-slate-500 dark:hover:bg-slate-600 hover:bg-slate-200';
     case 'primary':
-      return 's'
+      return 'p-2 w-full h-full rounded bg-slate-100 hover:bg-slate-200 dark:text-stone-300 dark:bg-slate-500 dark:hover:bg-slate-600';
   }
 });
 </script>

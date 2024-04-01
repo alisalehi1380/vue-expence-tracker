@@ -10,11 +10,12 @@
           sample_farsi_digits"
       :type="type"
       :placeholder="placeholder"
+      v-model="inputValue"
   />
 </template>
 
 <script setup lang="ts">
-import {defineProps} from 'vue';
+import {defineModel} from 'vue';
 
 interface Props {
   type: "text" | "number";
@@ -22,4 +23,6 @@ interface Props {
 }
 
 defineProps<Props>();
+
+const inputValue = defineModel();
 </script>

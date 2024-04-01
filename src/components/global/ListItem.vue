@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import {Icon} from '@iconify/vue';
-import {defineProps, ref} from 'vue';
+import {ref} from 'vue';
 import TomanIcon from "@/components/global/icons/TomanIcon.vue";
 import {useExpenseStore} from "@/stores/ExpenseStore";
 

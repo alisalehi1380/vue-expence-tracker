@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import {defineProps} from 'vue';
 import {readableNumber} from "@/composables/Number";
 
 interface Props {
