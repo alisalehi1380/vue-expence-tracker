@@ -34,7 +34,7 @@ const onSubmit = async () => {
   } else {
     try {
       await expenseStore.createExpense(expenseStore.expenseItem);
-      toast.success('با موفقیت ایجاد شد');
+      toast.success('تراکنش با موفقیت ایجاد شد');
     } catch (e) {
       toast.error('مشکلی به وجود آمده است');
     }
