@@ -9,17 +9,19 @@ export const useExpenseStore = defineStore('expense', () => {
     const expenseItem = ref({} as IExpenseItem);
 
     // @ts-ignore
-    const fetchExpenses = async () => {
+    const fetchExpenses = async (): Promise => {
         const {data, error} = await useApi("/todo");
         if (data.value) expenseList.value = data.value as IExpenseItem[];
     };
 
-    const createExpense = (expense) => {
-        // if (expense) expenseList.value.push(expense)
+    // @ts-ignore
+    const createExpense = async (payload: IExpenseItem): Promise => {
+        const {data} = await useApi('/todo/').post(payload);
+        if (data.value) expenseList.value.push(data.value as IExpenseItem);
     };
 
     // @ts-ignore
-    const deleteExpense = async (id: number):Promise => {
+    const deleteExpense = async (id: number): Promise => {
         const {data, error} = await useApi(`/todo/${id}`).delete();
         if (data.value) {
             const foundIndex = expenseList.value.findIndex((x) => x.id === id);
@@ -55,5 +57,5 @@ export const useExpenseStore = defineStore('expense', () => {
         return totalIncome() + totalExpense();
     }
 
-    return {expenseList, expenseItem, fetchExpenses, createExpense, deleteExpense, totalIncome,totalExpense,balance};
+    return {expenseList, expenseItem, fetchExpenses, createExpense, deleteExpense, totalIncome, totalExpense, balance};
 });
